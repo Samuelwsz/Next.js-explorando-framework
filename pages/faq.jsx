@@ -1,5 +1,8 @@
 import Link from "../src/components/Link"
+import PageTitle from "../src/components/PageTitle"
+import FAQScreen from "../src/screens/FAQScreen"
 
+export default FAQScreen;
 //SSG - static site generation
 //SSR - server side rendering
 //ISG - incremental static generation
@@ -23,23 +26,4 @@ export async function getStaticProps() {
       faq,
     },
   }
-}
-
-export default function faqPage({ faq }) {
-  return (
-    <>
-      <div>
-        <h1>Alura Cases - Página de Perguntas FAQ</h1>
-        <Link href="/">Ir para home</Link>
-        <ul>
-          {faq.map(({ answer, question }) => (
-            <article key={question}>
-              <h2>{answer}</h2>
-              <li>{question}</li>
-            </article>
-          ))}
-        </ul>
-      </div>
-    </>
-  )
 }
